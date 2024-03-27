@@ -4,7 +4,7 @@
 /* Variables Globales */
 :root {
     --FONT__FAMILY: "Open Sans", sans-serif;
-    --FONT__FAMILY__TWO: "Fira Sans", sans-serif;
+    --FONT__FAMILY__TWO: sans-serif;
     --LOGO__HOVER: #646cffaa;
     --LOGO__HOVER__TWO: #61dafbaa;
     --BUTTON__COLOR: #f9f9f9;
@@ -183,7 +183,23 @@ body {
 /*  ================= MEDIA QUERIES ================ */
 @media screen and (max-width: 768px) {
     .header .nav {
+        padding: 0.8rem 4rem;
         display: none;
+        position: absolute;
+        top: 70px;
+        right: 40px; /* Ajusta la distancia desde la parte superior según sea necesario */
+        background-color: rgba(255, 255, 255, 0.9); /* Agrega transparencia al color de fondo */
+        border-radius: 5px; /* Agrega esquinas redondeadas al menú */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+        z-index: 1000; /* Asegura que esté por encima del contenido */
+    }
+
+    .header .nav.active{
+        display: block;
+    }
+
+    .header .nav .nav__list{
+        flex-direction: column;
     }
 
     .header .contain__buttons {
@@ -199,6 +215,11 @@ body {
         margin: 4.5rem 1.5rem;
     }
 
+    .box__content .content__subtitle{
+        max-width: 60%;
+        font-size: 1.7rem;
+    }
+
     .main .box__content .content__title {
         max-width: 70%;
         margin: auto;
@@ -208,12 +229,14 @@ body {
 
     .main .box__content .paragraph {
         max-width: 80%;
-        font-size: 10px;
+        font-size: 12px;
+        text-wrap: pretty;
     }
 
     .main .video__container {
         width: 590px;
         height: 355px;
+        object-fit: cover;
     }
 
     .footer {
@@ -230,10 +253,19 @@ body {
         margin: 4.5rem 0;
     }
 
+    .main .box__content .paragraph{
+        max-width: 100%;
+        font-size: 12px;
+    }
+
     .main .box__content .content__title {
         max-width: 100%;
         margin: auto;
         margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .box__content .content__subtitle{
         font-size: 1.5rem;
     }
 
